@@ -1,0 +1,193 @@
+@import url('./normalize.css');
+@import url('./variables.css');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.header {
+    font-family: "Bodoni Moda SC", serif;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+.header__title {
+    font-size: 30px;
+    color: whitesmoke;
+    font-weight: 700;
+    letter-spacing: 10px;
+}
+
+.main {
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    padding: var(--p16);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main__cont {
+    width: 500px;
+    padding: var(--p16);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.main__cont-img {
+    position: absolute;
+    height: 350px;
+    width: 500px;
+    object-fit: contain;
+    top: 12%;
+    left: 5%;
+}
+
+.main__cont-form {
+    width: 400px;
+    padding: var(--p16);
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: "Source Serif 4", serif;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.input-text {
+    width: 90%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.7);
+    background-color: transparent;
+    color: whitesmoke;
+    margin: 8px 0;
+    font-size: 1.2rem;
+}
+
+.input-text:focus {
+    background-color: transparent;
+}
+
+/* .input-text:-webkit-autofill,
+.input-text:-webkit-autofill:hover,
+.input-text:-webkit-autofill:focus,
+.input-text:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: rgba(245, 245, 245, 0.7);
+    transition: background-color 5000s ease-in-out 0s;
+} */
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+.main__cont-form-select {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
+    margin: 8px 0;
+    width: 90%;
+}
+
+.main__cont-form-select option {
+    color: black;
+}
+
+.main__cont-form-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main__cont-button {
+    height: 55px;
+    width: 200px;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    font-family: "Source Serif 4", serif;
+    font-size: 1.3rem;
+}
+
+.main__recipe {
+    width: 500px;
+    min-height: 100%;
+    height: auto;
+    padding: 0 var(--p16);
+    margin-top: 16px;
+    border: 1px solid var(--bg-color);
+    font-family: "Source Serif 4", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.main__recipe-img {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    padding: var(--p16) 0;
+}
+
+.main__recipe-list {
+    list-style: none;
+}
+
+.li-img {
+    width: 20px;
+    height: 20px;
+}
+
+.main__recipe-cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__recipe-img--empty {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 1280px) { 
+    .main__cont-img {
+        position: absolute;
+        left: 0;
+    }
+}
