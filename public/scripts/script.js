@@ -1,7 +1,6 @@
 import { categories } from "./categories.js";
 
 const submitBtn = document.querySelector('.main__cont-button');
-const changeBtn = document.querySelector('.main__cont-form-another')
 const recipeContainer = document.querySelector('.main__recipe')
 
 async function getrecipe(event) {
@@ -51,9 +50,8 @@ async function getrecipe(event) {
            <img src="./icons/recipe.svg" alt="" class="main__recipe-img--empty">
            <h2>Ещё нет рецепта...</h2>
                 </div>`
-        console.log('no recipe')
     }
-
+    
 }
 
 submitBtn.addEventListener('click', getrecipe);
@@ -65,3 +63,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+

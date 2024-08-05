@@ -12,11 +12,11 @@ app.get('/api/recipes', async (req, res) => {
 
   try {
     const fetch = await import('node-fetch').then(mod => mod.default);
-    const req = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${mealTitle}&app_id=8afe80f2&app_key=d0a8e28c4c4c18b92d807b8dcd6cb2e5&ingr=${ingrQuantity}&cuisineType=${cuisineType}&mealType=${mealType}`)
+    const req = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${mealTitle}&app_id=${app_id}&app_key=${app_key}&ingr=${ingrQuantity}&cuisineType=${cuisineType}&mealType=${mealType}`)
     const data = await apiRes.json();
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch data from Edamam API' });
+    res.status(500).json({ error: 'Failed to fetch data from API' });
   }
 });
 
