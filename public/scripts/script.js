@@ -9,12 +9,7 @@ async function getrecipe(event) {
     const ingrQuantity = document.getElementsByName('ingr-quantity')[0].value;
     const mealType = document.getElementsByName('meal-type')[0].value;
     const cuisineType = document.getElementsByName('cuisine-type')[0].value
-    console.log('mealTitle:', mealTitle);
-    console.log('ingrQuantity:', ingrQuantity);
-    console.log('mealType:', mealType);
-    console.log('cuisineType:', cuisineType);
     const req = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${mealTitle}&app_id=8afe80f2&app_key=d0a8e28c4c4c18b92d807b8dcd6cb2e5&ingr=${ingrQuantity}&cuisineType=${cuisineType}&mealType=${mealType}`)
-    console.log(req)
     recipeContainer.innerHTML = ''
     const response = await req.json();
    
@@ -33,16 +28,14 @@ async function getrecipe(event) {
         ingredients.forEach(item => {
             const li = document.createElement('li');
             const category = item.foodCategory.toLowerCase();
-            console.log('food: ', item.foodCategory)
             if (category in categories) {
                 li.innerHTML = `<img class='li-img' src=${categories[category]} alt='li-img' /> ${item.text}`
-                console.log(categories[category])
             }
             ingrList.appendChild(li);
         });
         recipeImg.src = response.hits[randRecipe].recipe.images.SMALL.url;
         recipeLabel.textContent = response.hits[randRecipe].recipe.label
-        console.log(response.hits[randRecipe].recipe)
+
 
     }
     else {
