@@ -91,20 +91,11 @@ body {
     background-color: transparent;
 }
 
-/* .input-text:-webkit-autofill,
-.input-text:-webkit-autofill:hover,
-.input-text:-webkit-autofill:focus,
-.input-text:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-    box-shadow: 0 0 0px 1000px transparent inset;
-    -webkit-text-fill-color: rgba(245, 245, 245, 0.7);
-    transition: background-color 5000s ease-in-out 0s;
-} */
-
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
+
 input[data-autocompleted] {
     background-color: transparent !important;
 }
@@ -185,9 +176,121 @@ input[data-autocompleted] {
     height: 200px;
 }
 
-@media (max-width: 1280px) { 
+@media (max-width: 1024px) {
+    .main__cont-img {
+        position: absolute;
+        left: -3%;
+        top: 10%;
+        height: 250px;
+        width: 400px;
+    }
+
+    .main__cont-form {
+        min-width: 300px;
+        width: 350px;
+    }
+
+}
+
+@media (max-width: 700px) {
     .main__cont-img {
         position: absolute;
         left: 0;
+        top: 10%;
+        height: 200px;
+        width: 300px;
+    }
+
+    .main__cont-form {
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .main__recipe {
+        max-width: 300px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .main__recipe-cont {
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        text-align: center;
+    }
+
+    .main__recipe-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .main__cont-form-select option {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__recipe {
+        max-width: 500px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .main__cont {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__cont-img {
+        height: 300px;
+        width: 400px;
+        left: 3%;
+    }
+
+    .main__cont-form {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+
+
+    .main {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__cont {
+        max-width: 95%;
+        width: 100%;
+    }
+
+    .main__cont-img {
+        height: 250px;
+        width: 300px;
+    }
+
+    .main__recipe {
+        max-width: 95%;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (orientation: landscape) {
+    .main__cont-img {
+        top: 20%;
     }
 }
